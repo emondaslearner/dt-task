@@ -1,0 +1,42 @@
+{
+  "name": "dt-task",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "jest --watchAll --testPathPattern=./__test__/unit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jest": "^29.7.0",
+    "module-alias": "^2.2.3",
+    "mongodb": "^6.10.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "__test__/*"
+    ]
+  },
+  "_moduleAliases": {
+    "@src": "./src",
+    "@api": "./src/api",
+    "@db": "./src/db",
+    "@lib": "./src/lib",
+    "@routes": "./src/routes",
+    "@utils": "./src/utils"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
+}
