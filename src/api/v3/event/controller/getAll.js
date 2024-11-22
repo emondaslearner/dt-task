@@ -34,7 +34,7 @@ const getAll = async (req, res, next) => {
     });
 
     const response = {
-      code: 200,
+      success: true,
       message: "Data fetched successfully",
       data,
       self: req.path,
