@@ -10,7 +10,9 @@ const getSingle = async (req, res, next) => {
       data,
       links: {
         createEvent: `/api/v3/app/events`, 
-        deleteEvent: `/api/v3/app/event/${data._id}` 
+        getEvents: `/api/v3/app/events`, 
+        deleteEvent: `/api/v3/app/event/${data._id}`,
+        updateEvent: `/api/v3/app/event/${data._id}` 
       }
     })
   } catch (err) {

@@ -4,14 +4,25 @@ require("module-alias/register");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+const path = require('path');
 
 // routes
 const routes = require('./routes');
+
+// swagger 
+const swaggerDocument = YAML.load(
+  path.join(__dirname, "../src/swagger", "v3", "swagger.yaml")
+);
 
 // db functions
 const { connectToMongo } = require("./db");
 
 const app = express();
+
+// swagger
+app.use("/api-docs/v3", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(cors());
 app.use(bodyParser.json());

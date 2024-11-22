@@ -17,7 +17,9 @@ const updateOrCreate = async (req, res, next) => {
         self: req.path,
         links: {
           getEvent: `/api/v3/app/events/${data.insertedId}`,
-          deleteEvent: `/api/v3/app/events/${data.insertedId}`,
+          deleteEvent: `/api/v3/app/event/${data.insertedId}`,
+          updateEvent: `/api/v3/app/event/${data.insertedId}`,
+          getAllEvent: `/api/v3/app/events`,
         },
       });
     } else {
@@ -27,7 +29,9 @@ const updateOrCreate = async (req, res, next) => {
         self: req.path,
         links: {
           getEvent: `/api/v3/app/events/${req.params.id}`,
-          deleteEvent: `/api/v3/app/events/${req.params.id}`,
+          deleteEvent: `/api/v3/app/event/${req.params.id}`,
+          createEvent: `/api/v3/app/events`,
+          getAllEvent: `/api/v3/app/events`,
         },
       });
     }

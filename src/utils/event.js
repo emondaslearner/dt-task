@@ -16,8 +16,8 @@ const validateEvent = (data) => {
     attendees,
   } = data;
 
-  if (type !== "event")
-    throw error.badRequest("Invalid type. Type must be 'event'.");
+  if (!type)
+    throw error.badRequest("Type is required");
   if (!uid) throw error.badRequest("User ID (uid) is required");
   if (!name || typeof name !== "string" || name.trim().length === 0)
     throw error.badRequest("Event name is required.");

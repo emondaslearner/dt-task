@@ -10,7 +10,9 @@ const create = async (req, res, next) => {
       self: req.path,
       links: {
         getEvent: `/api/v3/app/events/${data.insertedId}`, 
-        deleteEvent: `/api/v3/app/event/${data.insertedId}` 
+        deleteEvent: `/api/v3/app/event/${data.insertedId}` ,
+        updateEvent: `/api/v3/app/event/${data.insertedId}`,
+        getAllEvent: `/api/v3/app/events`
       }
     })
   } catch (err) {
